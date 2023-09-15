@@ -1,4 +1,4 @@
-# Coding Data Science Interview Questions Practise 
+# Coding Data Science Interview Questions Practice 
 
 > Categorized by Easy, Medium & Hard
 
@@ -9,3 +9,4 @@
 1. Activity Rank
 
 ### Hard
+1. Algorithm Performance
