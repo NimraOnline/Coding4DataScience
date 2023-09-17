@@ -30,6 +30,33 @@ df = pd.DataFrame({"best_paid_title": output})
 return(df)
 ```
 
+### Salaries Differences
+> Write a query that calculates the difference between the highest salaries found in the marketing and engineering departments. Output just the absolute difference in salaries in a data frame.
+
+[Problem](https://platform.stratascratch.com/coding/10308-salaries-differences?code_type=2)
+
+```Python
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+#1. Find the marketing ID 
+marketing_id = int(db_dept['id'].where(db_dept['department']=='marketing').dropna())
+#2. Find the engineering ID 
+engineering_id = int(db_dept['id'].where(db_dept['department']=='engineering').dropna())
+
+#3. Identify the max salary of all marketing IDs
+highest_marketing = max(db_employee['salary'].where(db_employee['department_id'] == marketing_id).dropna())
+
+#4. Identify the max salary of all engineering IDs
+highest_eng = max(db_employee['salary'].where(db_employee['department_id'] == engineering_id).dropna())
+
+#5. Calculate the absolute difference between both
+diff_val = int(abs(highest_marketing - highest_eng))
+
+df = pd.DataFrame({'sal_difference' : [diff_val]})
+```
+
 
 
 
